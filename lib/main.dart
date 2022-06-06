@@ -8,6 +8,7 @@ import 'package:flutter_tv_shows/navigation/pages.dart';
 import 'package:flutter_tv_shows/services/navigation_service.dart';
 import 'package:flutter_tv_shows/utils/bloc_observer.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_tv_shows/utils/extensions.dart';
 
 import 'configs/themes.dart';
 
@@ -33,7 +34,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: '${AppLocalizations.of(context)?.tvShow}',
+      title: '${context.loc?.tvShow}',
       debugShowCheckedModeBanner: false,
       localizationsDelegates: const [
         AppLocalizations.delegate,

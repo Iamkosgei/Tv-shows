@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter_tv_shows/blocs/login_cubit/login_cubit.dart';
 import 'package:flutter_tv_shows/blocs/login_form_validation/login_form_validation_cubit.dart';
@@ -12,6 +11,7 @@ import 'package:flutter_tv_shows/navigation/pages.dart';
 import 'package:flutter_tv_shows/services/navigation_service.dart';
 import 'package:flutter_tv_shows/services/toast_service.dart';
 import 'package:flutter_tv_shows/ui/common_widgets/primary_text_form_field.dart';
+import 'package:flutter_tv_shows/utils/extensions.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -93,8 +93,7 @@ class LoginPage extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                    AppLocalizations.of(context)?.login ??
-                                        'Login',
+                                    context.loc?.login ?? 'Login',
                                     style: const TextStyle(
                                       color: Colors.white,
                                       fontWeight: FontWeight.bold,
@@ -105,8 +104,7 @@ class LoginPage extends StatelessWidget {
                                     height: 16,
                                   ),
                                   Text(
-                                    AppLocalizations.of(context)!
-                                        .loginRequirement,
+                                    context.loc!.loginRequirement,
                                     style: const TextStyle(
                                       color: Colors.white,
                                       fontSize: 16,
@@ -116,8 +114,7 @@ class LoginPage extends StatelessWidget {
                                     height: 16,
                                   ),
                                   PrimaryTextFormField(
-                                    labelText:
-                                        AppLocalizations.of(context)!.email,
+                                    labelText: context.loc!.email,
                                     onChanged: (String? val) {
                                       context
                                           .read<LoginFormValidationCubit>()
@@ -129,8 +126,7 @@ class LoginPage extends StatelessWidget {
                                     height: 16,
                                   ),
                                   PrimaryTextFormField(
-                                    labelText:
-                                        AppLocalizations.of(context)!.password,
+                                    labelText: context.loc!.password,
                                     obscureText: true,
                                     onChanged: (String? val) {
                                       context
@@ -147,8 +143,7 @@ class LoginPage extends StatelessWidget {
                                     child: TextButton(
                                         onPressed: () {},
                                         child: Text(
-                                          AppLocalizations.of(context)!
-                                              .createAccount,
+                                          context.loc!.createAccount,
                                         )),
                                   ),
                                   const SizedBox(
@@ -179,8 +174,7 @@ class LoginPage extends StatelessWidget {
                                             }
                                           : null,
                                       child: Text(
-                                        AppLocalizations.of(context)?.login ??
-                                            'Login',
+                                        context.loc?.login ?? 'Login',
                                       )),
                                   const SizedBox(
                                     height: 16,

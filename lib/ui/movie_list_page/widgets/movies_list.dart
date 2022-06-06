@@ -9,7 +9,7 @@ import 'package:flutter_tv_shows/di/injector.dart';
 import 'package:flutter_tv_shows/ui/common_widgets/error_retry_view.dart';
 import 'package:flutter_tv_shows/ui/movie_list_page/widgets/movie_item.dart';
 import 'package:flutter_tv_shows/ui/movie_list_page/widgets/movie_list_loading_shimmer.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_tv_shows/utils/extensions.dart';
 
 class MoviesList extends StatefulWidget {
   const MoviesList({Key? key}) : super(key: key);
@@ -105,7 +105,7 @@ class _MoviesListState extends State<MoviesList> {
                                 context.read<MoviesListCubit>().getMovies();
                               },
                               child: Text(
-                                '${AppLocalizations.of(context)?.retry}',
+                                '${context.loc?.retry}',
                                 style: const TextStyle(
                                   color: primaryColor,
                                 ),
