@@ -17,7 +17,12 @@ class MoviesRepositoryImpl implements MoviesRepository {
   @override
   Future<ShowsListResponse> getMovieList(int page) async {
     try {
-      final res = await dio.get(showsUrl);
+      final res = await dio.get(
+        showsUrl,
+        queryParameters: {
+          'page': page,
+        },
+      );
       if (res.statusCode != 200) {
         final error =
             ErrorResponse.fromJson(json.decode(json.encode(res.data)));

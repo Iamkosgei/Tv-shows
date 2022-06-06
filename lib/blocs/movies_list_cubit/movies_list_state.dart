@@ -9,12 +9,22 @@ abstract class MoviesListState extends Equatable {
 
 class MoviesListInitial extends MoviesListState {}
 
-class MoviesListLoading extends MoviesListState {}
+class MoviesListLoading extends MoviesListState {
+  final List<Show> movies;
+  final bool isFirstFetch;
+
+  const MoviesListLoading({required this.movies, required this.isFirstFetch});
+}
 
 class MoviesListError extends MoviesListState {
-  final String error;
+  final String message;
+  final List<Show> movies;
+  final bool isFirstFetch;
 
-  const MoviesListError(this.error);
+  const MoviesListError(
+      {required this.message,
+      required this.movies,
+      required this.isFirstFetch});
 }
 
 class MoviesLoaded extends MoviesListState {
