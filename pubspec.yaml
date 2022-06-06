@@ -50,6 +50,12 @@ dependencies:
   #loading svgs
   flutter_svg: ^1.1.0
 
+  #handle showing toasts
+  another_flushbar: ^1.10.28
+
+  #cache network images 
+  cached_network_image: ^3.2.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

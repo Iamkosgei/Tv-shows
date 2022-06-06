@@ -1,10 +1,31 @@
 {
-    "tvShow": "3 Tv show 3",
-    "@tvShow": {
-      "description": "Tv show 3"
-    },
-    "helloWorld": "Hello world",
-    "@helloWorld": {
-      "description": "Hello world"
-    }
+  "tvShow": "Tv show",
+  "@tvShow": {
+    "description": "Tv show"
+  },
+  "helloWorld": "Hello world",
+  "@helloWorld": {
+    "description": "Hello world"
+  },
+  "login": "Login",
+  "@login": {
+    "description": "Login"
+  },
+  "loginRequirement": "In order to continue please login",
+  "@loginRequirement": {
+    "description": "In order to continue please login"
+  },
+  "email": "Email",
+  "@email": {
+    "description": "Email"
+  },
+  "password": "Password",
+  "@password": {
+    "description": "Password"
+  }
+  ,
+  "createAccount": "Create Account",
+  "@createAccount": {
+    "description": "Create Account"
+  }
 }

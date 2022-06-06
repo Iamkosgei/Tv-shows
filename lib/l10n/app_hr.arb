@@ -1,5 +1,9 @@
 {
-    "tvShow": "TV emisije",
-    "helloWorld": "Pozdrav svijete"
-    
+  "tvShow": "TV emisije",
+  "helloWorld": "Pozdrav svijete",
+  "login": "prijaviti se",
+  "loginRequirement": "Za nastavak molimo prijavite se",
+  "email": "E-mail",
+   "password": "Zaporka",
+    "createAccount": "Napravite račun"
 }

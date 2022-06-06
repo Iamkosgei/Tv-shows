@@ -5,12 +5,15 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_tv_shows/di/injector.dart';
 import 'package:flutter_tv_shows/navigation/named_router.dart';
 import 'package:flutter_tv_shows/navigation/pages.dart';
+import 'package:flutter_tv_shows/services/navigation_service.dart';
 import 'package:flutter_tv_shows/utils/bloc_observer.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-void main() {
+import 'configs/themes.dart';
+
+Future<void> main() async {
   initLogging();
-  setUpLocator();
+  await setUpLocator();
 
   BlocOverrides.runZoned(
     () {
@@ -33,6 +36,7 @@ class MyApp extends StatelessWidget {
       title: '${AppLocalizations.of(context)?.tvShow}',
       debugShowCheckedModeBanner: false,
       localizationsDelegates: const [
+        AppLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
@@ -41,11 +45,10 @@ class MyApp extends StatelessWidget {
         Locale('en', ''),
         Locale('hr', ''),
       ],
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: CustomTheme.lightTheme,
       onGenerateRoute: generateRoute,
       initialRoute: splashPage,
+      navigatorKey: inject.get<NavigationService>().navigatorKey,
     );
   }
 }
