@@ -22,10 +22,25 @@
   "password": "Password",
   "@password": {
     "description": "Password"
-  }
-  ,
+  },
   "createAccount": "Create Account",
   "@createAccount": {
     "description": "Create Account"
+  },
+  "shows": "Shows",
+  "@shows": {
+    "description": "Shows"
+  },
+  "retry": "Retry",
+  "@retry": {
+    "description": "Retry"
+  },
+  "logOut": "Log out",
+  "@logOut": {
+    "description": "Log out"
+  },
+  "profile": "Profile",
+  "@profile": {
+    "description": "Profile"
   }
 }

@@ -178,7 +178,10 @@ class LoginPage extends StatelessWidget {
                                                   );
                                             }
                                           : null,
-                                      child: const Text('Login')),
+                                      child: Text(
+                                        AppLocalizations.of(context)?.login ??
+                                            'Login',
+                                      )),
                                   const SizedBox(
                                     height: 16,
                                   ),

@@ -4,6 +4,7 @@ import 'package:flutter_tv_shows/data/local_data/secure_storage_helper.dart';
 import 'package:flutter_tv_shows/di/injector.dart';
 import 'package:flutter_tv_shows/navigation/pages.dart';
 import 'package:flutter_tv_shows/services/navigation_service.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ProfileBottomSheet extends StatelessWidget {
   const ProfileBottomSheet({Key? key}) : super(key: key);
@@ -24,9 +25,9 @@ class ProfileBottomSheet extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Text(
-                  'Profile',
-                  style: TextStyle(
+                Text(
+                  '${AppLocalizations.of(context)?.logOut}',
+                  style: const TextStyle(
                     color: Colors.black,
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
@@ -52,7 +53,7 @@ class ProfileBottomSheet extends StatelessWidget {
                   inject.get<SecureStorageHelper>().clearAll();
                   inject.get<NavigationService>().navigateTo(loginPage);
                 },
-                child: const Text('Log out')),
+                child: Text('${AppLocalizations.of(context)?.retry}')),
           ],
         ),
       ),

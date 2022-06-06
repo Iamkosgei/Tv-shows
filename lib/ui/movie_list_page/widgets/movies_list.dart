@@ -9,6 +9,7 @@ import 'package:flutter_tv_shows/di/injector.dart';
 import 'package:flutter_tv_shows/ui/common_widgets/error_retry_view.dart';
 import 'package:flutter_tv_shows/ui/movie_list_page/widgets/movie_item.dart';
 import 'package:flutter_tv_shows/ui/movie_list_page/widgets/movie_list_loading_shimmer.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class MoviesList extends StatefulWidget {
   const MoviesList({Key? key}) : super(key: key);
@@ -103,9 +104,9 @@ class _MoviesListState extends State<MoviesList> {
                               onPressed: () {
                                 context.read<MoviesListCubit>().getMovies();
                               },
-                              child: const Text(
-                                'Retry',
-                                style: TextStyle(
+                              child: Text(
+                                '${AppLocalizations.of(context)?.retry}',
+                                style: const TextStyle(
                                   color: primaryColor,
                                 ),
                               ),
@@ -124,33 +125,6 @@ class _MoviesListState extends State<MoviesList> {
                 itemCount: movies.length +
                     (isLoadingMore || hasErrorLoadingMore ? 1 : 0));
           }
-
-          // if (state is MoviesLoaded) {
-          //   return ListView.separated(
-          //       controller: scrollController
-          //         ..addListener(() {
-          //           if (scrollController.position.pixels ==
-          //               scrollController.position.maxScrollExtent) {
-          //             context.read<MoviesListCubit>().loadMore();
-          //           }
-          //         }),
-          //       itemBuilder: (context, index) => MovieItem(
-          //             show: state.movies[index],
-          //           ),
-          //       separatorBuilder: (_, __) => const SizedBox(
-          //             height: 4,
-          //           ),
-          //       itemCount: state.movies.length);
-          // } else if (state is MoviesListLoading) {
-          //   return const MovieListLoadingShimmer();
-          // } else if (state is MoviesListError) {
-          //   return ErrorRetryView(
-          //     error: state.message,
-          //     onTapRetry: () {
-          //       context.read<MoviesListCubit>().getMovies();
-          //     },
-          //   );
-          // }
           return const SizedBox();
         },
       ),

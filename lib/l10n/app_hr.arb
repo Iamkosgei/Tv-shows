@@ -4,6 +4,10 @@
   "login": "prijaviti se",
   "loginRequirement": "Za nastavak molimo prijavite se",
   "email": "E-mail",
-   "password": "Zaporka",
-    "createAccount": "Napravite račun"
+  "password": "Zaporka",
+  "createAccount": "Napravite račun",
+  "shows": "Emisije",
+  "retry": "Pokušajte ponovo",
+  "logOut": "Odjavite se",
+  "profile": "Profil"
 }

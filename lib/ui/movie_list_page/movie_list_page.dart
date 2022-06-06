@@ -7,6 +7,7 @@ import 'package:flutter_tv_shows/di/injector.dart';
 import 'package:flutter_tv_shows/ui/movie_list_page/widgets/movies_list.dart';
 import 'package:flutter_tv_shows/ui/movie_list_page/widgets/profile_bottom_sheet.dart';
 import 'package:flutter_tv_shows/utils/constants.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class MovieListPage extends StatelessWidget {
   const MovieListPage({Key? key}) : super(key: key);
@@ -29,9 +30,9 @@ class MovieListPage extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        const Text(
-                          'Shows',
-                          style: TextStyle(
+                        Text(
+                          AppLocalizations.of(context)?.shows ?? '',
+                          style: const TextStyle(
                             color: Colors.black,
                             fontWeight: FontWeight.bold,
                             fontSize: 32,

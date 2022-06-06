@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter_tv_shows/configs/assets.dart';
 import 'package:flutter_tv_shows/configs/colors.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ErrorRetryView extends StatelessWidget {
   final String error;
@@ -40,7 +41,7 @@ class ErrorRetryView extends StatelessWidget {
               foregroundColor: MaterialStateProperty.all(
                 Colors.white,
               )),
-          child: const Text('Retry'),
+          child: Text('${AppLocalizations.of(context)?.retry}'),
         )
       ],
     );
