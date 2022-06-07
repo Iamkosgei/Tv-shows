@@ -1,6 +1,5 @@
 import 'package:another_flushbar/flushbar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_tv_shows/di/injector.dart';
 import 'package:flutter_tv_shows/services/navigation_service.dart';
 
 class ToastService {
@@ -19,7 +18,7 @@ class ToastService {
       duration: const Duration(seconds: 3),
       margin: const EdgeInsets.all(8),
     ).show(
-      inject.get<NavigationService>().navigatorKey.currentContext!,
+      navigatorKey.currentContext!,
     );
   }
 }

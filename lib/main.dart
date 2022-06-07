@@ -49,7 +49,7 @@ class MyApp extends StatelessWidget {
       theme: CustomTheme.lightTheme,
       onGenerateRoute: generateRoute,
       initialRoute: splashPage,
-      navigatorKey: inject.get<NavigationService>().navigatorKey,
+      navigatorKey: navigatorKey,
     );
   }
 }

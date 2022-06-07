@@ -53,8 +53,8 @@ class AuthInterceptor extends Interceptor {
     if (err.response?.statusCode == 401 || err.response?.statusCode == 403) {
       if (!err.requestOptions.path.contains('sign_in')) {
         //can refresh token
-        await secureStorageHelper.clearAll();
-        inject.get<NavigationService>().clearAllRoutes(loginPage);
+        // await secureStorageHelper.clearAll();
+        // inject.get<NavigationService>().clearAllRoutes(loginPage);
       }
     }
     return super.onError(err, handler);

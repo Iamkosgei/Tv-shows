@@ -1,5 +1,9 @@
-class User {
-  User({
+import 'dart:convert';
+
+import 'package:equatable/equatable.dart';
+
+class User extends Equatable {
+  const User({
     this.id,
     this.email,
     this.imageUrl,
@@ -8,6 +12,10 @@ class User {
   final String? id;
   final String? email;
   final String? imageUrl;
+
+  factory User.fromRawJson(String str) => User.fromJson(json.decode(str));
+
+  String toRawJson() => json.encode(toJson());
 
   factory User.fromJson(Map<String, dynamic> json) => User(
         id: json["id"],
@@ -20,4 +28,7 @@ class User {
         "email": email,
         "image_url": imageUrl,
       };
+
+  @override
+  List<Object?> get props => [id, email, imageUrl];
 }

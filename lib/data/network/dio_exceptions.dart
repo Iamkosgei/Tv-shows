@@ -1,22 +1,20 @@
 import 'package:dio/dio.dart';
-import 'package:flutter_tv_shows/utils/utils.dart';
 
 class DioExceptions implements Exception {
   DioExceptions.fromDioError(DioError dioError) {
     switch (dioError.type) {
       case DioErrorType.cancel:
-        message = '${getGlobalApplocalization()?.somethingWentWrong}';
+        message = 'Request to API server was cancelled';
         break;
       case DioErrorType.connectTimeout:
-        message = '${getGlobalApplocalization()?.connectionTimeout}';
+        message = 'Connection timeout with API server';
         break;
       case DioErrorType.other:
-        message = '${getGlobalApplocalization()?.internetConnectionError}';
+        message = 'Check your internet connection and try again';
         break;
       case DioErrorType.receiveTimeout:
-        message = '${getGlobalApplocalization()?.receiveTimeOut}';
+        message = 'Receive timeout in connection with API server';
         break;
-
       case DioErrorType.response:
         message = _handleError(
               dioError.response?.statusCode,
@@ -26,7 +24,7 @@ class DioExceptions implements Exception {
             '';
         break;
       case DioErrorType.sendTimeout:
-        message = '${getGlobalApplocalization()?.sendTimeOut}';
+        message = 'Send timeout in connection with API server';
         break;
     }
   }
@@ -40,31 +38,28 @@ class DioExceptions implements Exception {
   }) {
     switch (statusCode) {
       case 400:
-        return '${getGlobalApplocalization()?.badRequest}';
+        return 'Bad request';
       case 401:
         return isAuthUrl
-            ? '${getGlobalApplocalization()?.invalidCredentials}'
-            : '${getGlobalApplocalization()?.unauthorized}';
+            ? '''
+Invalid credentials,Please check username and password and try again'''
+            : 'Unauthorized';
       case 404:
         if (error is String) {
-          return error.isNotEmpty
-              ? error
-              : '${getGlobalApplocalization()?.somethingWentWrong}';
+          return error.isNotEmpty ? error : 'Oops something went wrong';
         } else {
           return error['message'] as String;
         }
       case 403:
-        return '${getGlobalApplocalization()?.sessionExpired}';
+        return 'Session expired, please log in again.';
       case 500:
         if (error is String) {
-          return error.isNotEmpty
-              ? error
-              : '${getGlobalApplocalization()?.internalServerError}';
+          return error.isNotEmpty ? error : 'Internal server error';
         } else {
           return error['message'] as String;
         }
       default:
-        return '${getGlobalApplocalization()?.somethingWentWrong}';
+        return 'Oops something went wrong';
     }
   }
 
