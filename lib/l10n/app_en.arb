@@ -42,5 +42,55 @@
   "profile": "Profile",
   "@profile": {
     "description": "Profile"
+  },
+  "loginSuccess": "Login success, welcome.",
+  "@loginSuccess": {
+    "description": "Login success, welcome."
+  },
+  "somethingWentWrong": "Something went wrong",
+  "@somethingWentWrong": {
+    "description": "Something went wrong"
+  },
+  "requestCancelled": "Request to API server was cancelled",
+  "@requestCancelled": {
+    "description": "Request to API server was cancelled"
+  },
+  "connectionTimeout": "Connection timeout with API server",
+  "@connectionTimeout": {
+    "description": "Connection timeout with API server"
+  },
+  "internetConnectionError": "Check your internet connection and try again",
+  "@internetConnectionError": {
+    "description": "Check your internet connection and try againr"
+  },
+  "receiveTimeOut": "Receive timeout in connection with API server",
+  "@receiveTimeOut": {
+    "description": " Receive timeout in connection with API server"
+  },
+  "sendTimeOut": "Send timeout in connection with API server",
+  "@sendTimeOut": {
+    "description": "Send timeout in connection with API server"
+  },
+  "badRequest": "Bad request",
+  "@badRequest": {
+    "description": "Bad request"
+  },
+  "invalidCredentials": "Invalid credentials,Please check username and password and try again",
+  "@invalidCredentials": {
+    "description": "Invalid credentials,Please check username and password and try again"
+  },
+  "unauthorized": "Unauthorized",
+  "@unauthorized": {
+    "description": "Unauthorized"
+  },
+  "sessionExpired": "Session expired, please log in again.",
+  "@sessionExpired": {
+    "description": "Session expired, please log in again."
+  },
+  "internalServerError": "Internal server error",
+  "@internalServerError": {
+    "description": "Internal server error"
   }
+
+  
 }

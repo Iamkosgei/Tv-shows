@@ -1,20 +1,27 @@
 import 'package:dio/dio.dart';
+import 'package:flutter_tv_shows/utils/utils.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class DioExceptions implements Exception {
   DioExceptions.fromDioError(DioError dioError) {
     switch (dioError.type) {
       case DioErrorType.cancel:
-        message = 'Request to API server was cancelled';
+        message =
+            '${AppLocalizations.of(getGlobalApplicationContext()!)?.somethingWentWrong}';
         break;
       case DioErrorType.connectTimeout:
-        message = 'Connection timeout with API server';
+        message =
+            '${AppLocalizations.of(getGlobalApplicationContext()!)?.connectionTimeout}';
         break;
       case DioErrorType.other:
-        message = 'Check your internet connection and try again';
+        message =
+            '${AppLocalizations.of(getGlobalApplicationContext()!)?.internetConnectionError}';
         break;
       case DioErrorType.receiveTimeout:
-        message = 'Receive timeout in connection with API server';
+        message =
+            '${AppLocalizations.of(getGlobalApplicationContext()!)?.receiveTimeOut}';
         break;
+
       case DioErrorType.response:
         message = _handleError(
               dioError.response?.statusCode,
@@ -24,7 +31,8 @@ class DioExceptions implements Exception {
             '';
         break;
       case DioErrorType.sendTimeout:
-        message = 'Send timeout in connection with API server';
+        message =
+            '${AppLocalizations.of(getGlobalApplicationContext()!)?.sendTimeOut}';
         break;
     }
   }
@@ -38,28 +46,31 @@ class DioExceptions implements Exception {
   }) {
     switch (statusCode) {
       case 400:
-        return 'Bad request';
+        return '${AppLocalizations.of(getGlobalApplicationContext()!)?.badRequest}';
       case 401:
         return isAuthUrl
-            ? '''
-Invalid credentials,Please check username and password and try again'''
-            : 'Unauthorized';
+            ? '${AppLocalizations.of(getGlobalApplicationContext()!)?.invalidCredentials}'
+            : '${AppLocalizations.of(getGlobalApplicationContext()!)?.unauthorized}';
       case 404:
         if (error is String) {
-          return error.isNotEmpty ? error : 'Oops something went wrong';
+          return error.isNotEmpty
+              ? error
+              : '${AppLocalizations.of(getGlobalApplicationContext()!)?.somethingWentWrong}';
         } else {
           return error['message'] as String;
         }
       case 403:
-        return 'Session expired, please log in again.';
+        return '${AppLocalizations.of(getGlobalApplicationContext()!)?.sessionExpired}';
       case 500:
         if (error is String) {
-          return error.isNotEmpty ? error : 'Internal server error';
+          return error.isNotEmpty
+              ? error
+              : '${AppLocalizations.of(getGlobalApplicationContext()!)?.internalServerError}';
         } else {
           return error['message'] as String;
         }
       default:
-        return 'Oops something went wrong';
+        return '${AppLocalizations.of(getGlobalApplicationContext()!)?.somethingWentWrong}';
     }
   }
 

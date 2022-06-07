@@ -6,6 +6,8 @@ import 'package:flutter_tv_shows/data/local_data/secure_storage_helper.dart';
 import 'package:flutter_tv_shows/data/models/login_user_request.dart';
 import 'package:flutter_tv_shows/data/repositories/auth_repository.dart';
 import 'package:flutter_tv_shows/utils/constants.dart';
+import 'package:flutter_tv_shows/utils/utils.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 part 'login_state.dart';
 
@@ -30,7 +32,8 @@ class LoginCubit extends Cubit<LoginState> {
       await authRepository.saveStringToSecuredHelper(
           loggedInUser, jsonEncode(res.toJson()));
 
-      emit(const LoginSuccess('Login success, welcome.'));
+      emit(LoginSuccess(
+          '${AppLocalizations.of(getGlobalApplicationContext()!)?.loginSuccess}'));
     } catch (e) {
       emit(LoginError(e.toString()));
     }

@@ -9,5 +9,17 @@
   "shows": "Emisije",
   "retry": "Pokušajte ponovo",
   "logOut": "Odjavite se",
-  "profile": "Profil"
+  "profile": "Profil",
+  "loginSuccess": "Uspješna prijava, dobrodošli.",
+  "somethingWentWrong": "Nešto je pošlo po zlu",
+  "requestCancelled": "Zahtjev za API poslužitelj je otkazan",
+  "connectionTimeout": "Istek veze s API poslužiteljem",
+  "internetConnectionError": "Provjerite internetsku vezu i pokušajte ponovno",
+  "receiveTimeOut": "Vremensko ograničenje primanja u vezi s API poslužiteljem",
+  "sendTimeOut": "Vremensko ograničenje slanja u vezi s API poslužiteljem",
+  "badRequest": "Loš zahtjev",
+  "invalidCredentials": "Nevažeće vjerodajnice, molimo provjerite korisničko ime i lozinku i pokušajte ponovno",
+  "unauthorized": "Unauthorized",
+  "sessionExpired": "Sesija je istekla, prijavite se ponovo.",
+   "internalServerError": "Interna pogreška poslužitelja"
 }
