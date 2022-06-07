@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_tv_shows/data/local_data/secure_storage_helper.dart';
 import 'package:flutter_tv_shows/utils/constants.dart';
 import 'package:flutter_tv_shows/utils/utils.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 part 'start_up_state.dart';
 
@@ -18,8 +17,7 @@ class StartUpCubit extends Cubit<StartUpState> {
 
       emit(AuthStatus(loggedIn: authStatus == 'true'));
     } catch (e) {
-      emit(StartUpError(
-          '${AppLocalizations.of(getGlobalApplicationContext()!)?.somethingWentWrong}'));
+      emit(StartUpError('${getGlobalApplocalization()?.somethingWentWrong}'));
     }
   }
 }

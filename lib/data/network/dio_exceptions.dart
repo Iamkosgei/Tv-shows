@@ -1,25 +1,20 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_tv_shows/utils/utils.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class DioExceptions implements Exception {
   DioExceptions.fromDioError(DioError dioError) {
     switch (dioError.type) {
       case DioErrorType.cancel:
-        message =
-            '${AppLocalizations.of(getGlobalApplicationContext()!)?.somethingWentWrong}';
+        message = '${getGlobalApplocalization()?.somethingWentWrong}';
         break;
       case DioErrorType.connectTimeout:
-        message =
-            '${AppLocalizations.of(getGlobalApplicationContext()!)?.connectionTimeout}';
+        message = '${getGlobalApplocalization()?.connectionTimeout}';
         break;
       case DioErrorType.other:
-        message =
-            '${AppLocalizations.of(getGlobalApplicationContext()!)?.internetConnectionError}';
+        message = '${getGlobalApplocalization()?.internetConnectionError}';
         break;
       case DioErrorType.receiveTimeout:
-        message =
-            '${AppLocalizations.of(getGlobalApplicationContext()!)?.receiveTimeOut}';
+        message = '${getGlobalApplocalization()?.receiveTimeOut}';
         break;
 
       case DioErrorType.response:
@@ -31,8 +26,7 @@ class DioExceptions implements Exception {
             '';
         break;
       case DioErrorType.sendTimeout:
-        message =
-            '${AppLocalizations.of(getGlobalApplicationContext()!)?.sendTimeOut}';
+        message = '${getGlobalApplocalization()?.sendTimeOut}';
         break;
     }
   }
@@ -46,31 +40,31 @@ class DioExceptions implements Exception {
   }) {
     switch (statusCode) {
       case 400:
-        return '${AppLocalizations.of(getGlobalApplicationContext()!)?.badRequest}';
+        return '${getGlobalApplocalization()?.badRequest}';
       case 401:
         return isAuthUrl
-            ? '${AppLocalizations.of(getGlobalApplicationContext()!)?.invalidCredentials}'
-            : '${AppLocalizations.of(getGlobalApplicationContext()!)?.unauthorized}';
+            ? '${getGlobalApplocalization()?.invalidCredentials}'
+            : '${getGlobalApplocalization()?.unauthorized}';
       case 404:
         if (error is String) {
           return error.isNotEmpty
               ? error
-              : '${AppLocalizations.of(getGlobalApplicationContext()!)?.somethingWentWrong}';
+              : '${getGlobalApplocalization()?.somethingWentWrong}';
         } else {
           return error['message'] as String;
         }
       case 403:
-        return '${AppLocalizations.of(getGlobalApplicationContext()!)?.sessionExpired}';
+        return '${getGlobalApplocalization()?.sessionExpired}';
       case 500:
         if (error is String) {
           return error.isNotEmpty
               ? error
-              : '${AppLocalizations.of(getGlobalApplicationContext()!)?.internalServerError}';
+              : '${getGlobalApplocalization()?.internalServerError}';
         } else {
           return error['message'] as String;
         }
       default:
-        return '${AppLocalizations.of(getGlobalApplicationContext()!)?.somethingWentWrong}';
+        return '${getGlobalApplocalization()?.somethingWentWrong}';
     }
   }
 

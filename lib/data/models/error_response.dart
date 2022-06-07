@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'package:flutter_tv_shows/utils/utils.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class ErrorResponse {
   ErrorResponse({
@@ -25,6 +24,6 @@ class ErrorResponse {
         "success": success,
         "errors": errors != null
             ? List<dynamic>.from(errors!.map((x) => x))
-            : '${AppLocalizations.of(getGlobalApplicationContext()!)?.somethingWentWrong}',
+            : '${getGlobalApplocalization()?.somethingWentWrong}',
       };
 }

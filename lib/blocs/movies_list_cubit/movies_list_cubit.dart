@@ -51,8 +51,7 @@ class MoviesListCubit extends Cubit<MoviesListState> {
       } else {
         hasError = true;
         emit(MoviesListError(
-          message:
-              '${AppLocalizations.of(getGlobalApplicationContext()!)?.somethingWentWrong}',
+          message: '${getGlobalApplocalization()?.somethingWentWrong}',
           isFirstFetch: page == 1,
           movies: movies,
         ));

@@ -32,8 +32,7 @@ class LoginCubit extends Cubit<LoginState> {
       await authRepository.saveStringToSecuredHelper(
           loggedInUser, jsonEncode(res.toJson()));
 
-      emit(LoginSuccess(
-          '${AppLocalizations.of(getGlobalApplicationContext()!)?.loginSuccess}'));
+      emit(LoginSuccess('${getGlobalApplocalization()?.loginSuccess}'));
     } catch (e) {
       emit(LoginError(e.toString()));
     }
