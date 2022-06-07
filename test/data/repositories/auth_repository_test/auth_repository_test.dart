@@ -109,4 +109,13 @@ void main() {
     expect(storedStr, "Stored str");
     verify(secureStorageHelper.getString(loggedInUser)).called(1);
   });
+
+  test('loginUser() throws an Exception when not successful', () async {
+    when(when(dio.post('users/sign_in', data: loginUser.toJson())))
+        .thenThrow(Exception('Something went wrong'));
+
+    expect(() => authRepositoryImpl.loginUser(loginUser), throwsException);
+
+    verify(dio.post('users/sign_in', data: loginUser.toJson())).called(1);
+  });
 }
