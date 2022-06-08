@@ -7,7 +7,6 @@ import 'package:flutter_tv_shows/data/models/login_user_request.dart';
 import 'package:flutter_tv_shows/data/repositories/auth_repository.dart';
 import 'package:flutter_tv_shows/utils/constants.dart';
 import 'package:flutter_tv_shows/utils/utils.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 part 'login_state.dart';
 
