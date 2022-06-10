@@ -24,7 +24,8 @@ jobs:
       with:
         channel: 'beta' # 'dev', 'alpha', default to: 'stable'
         # flutter-version: '1.12.x' # you can also specify exact version of flutter
-    
+    #clean
+    - run: flutter clean
     # Get flutter dependencies.
     - run: flutter pub get
     
@@ -32,7 +33,7 @@ jobs:
     - run: flutter format --set-exit-if-changed .
     
     # Statically analyze the Dart code for any errors.
-    # - run: flutter analyze .
+     - run: flutter analyze .
     
     # Run tests for our flutter project.
     - run: flutter test
