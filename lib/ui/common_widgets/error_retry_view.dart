@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter_tv_shows/configs/assets.dart';
 import 'package:flutter_tv_shows/configs/colors.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_tv_shows/utils/extensions.dart';
 
 class ErrorRetryView extends StatelessWidget {

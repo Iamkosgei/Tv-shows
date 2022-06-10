@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_tv_shows/data/models/shows_list_response.dart';
 import 'package:flutter_tv_shows/data/repositories/movies_repository.dart';
 import 'package:flutter_tv_shows/utils/utils.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 part 'movies_list_state.dart';
 

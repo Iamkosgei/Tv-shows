@@ -8,7 +8,7 @@ const user = User(
   imageUrl: 'test.png',
 );
 
-final loginUser = LoginUserRequest(email: 'test@gmail.com', password: '1234');
+const loginUser = LoginUserRequest(email: 'test@gmail.com', password: '1234');
 
 final successUserLoginResponse = {
   "user": {"id": "1", "email": "test@gmail.com", "image_url": "test.png"}

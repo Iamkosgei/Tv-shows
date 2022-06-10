@@ -4,9 +4,6 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_tv_shows/data/local_data/secure_storage_helper.dart';
 import 'package:flutter_tv_shows/data/models/user_session_data.dart';
-import 'package:flutter_tv_shows/di/injector.dart';
-import 'package:flutter_tv_shows/navigation/pages.dart';
-import 'package:flutter_tv_shows/services/navigation_service.dart';
 import 'package:flutter_tv_shows/utils/constants.dart';
 
 class AuthInterceptor extends Interceptor {
