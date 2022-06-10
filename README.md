@@ -1,5 +1,5 @@
 
-  
+  [![codecov](https://codecov.io/gh/Iamkosgei/Tv-shows/branch/main/graph/badge.svg)](https://codecov.io/gh/Iamkosgei/Tv-shows)
 
 # Tv shows
 
