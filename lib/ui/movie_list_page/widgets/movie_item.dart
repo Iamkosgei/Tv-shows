@@ -11,7 +11,7 @@ class MovieItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(8.0),
+        borderRadius: BorderRadius.circular(4.0),
       ),
       clipBehavior: Clip.antiAlias,
       color: Colors.white,
@@ -22,7 +22,7 @@ class MovieItem extends StatelessWidget {
         child: Column(
           children: [
             Expanded(
-              flex: 3,
+              flex: 2,
               child: CachedNetworkImage(
                 width: double.infinity,
                 fit: BoxFit.cover,
@@ -32,15 +32,18 @@ class MovieItem extends StatelessWidget {
                 errorWidget: (context, url, error) => const Icon(Icons.error),
               ),
             ),
+            const SizedBox(
+              height: 16,
+            ),
             Expanded(
               flex: 1,
               child: Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(16.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Expanded(
-                      flex: 1,
+                      // flex: 1,
                       child: Text(
                         show.title ?? '',
                         style: const TextStyle(
@@ -51,10 +54,10 @@ class MovieItem extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(
-                      height: 4,
+                      height: 16,
                     ),
                     Expanded(
-                      flex: 2,
+                      // flex: 2,
                       child: Text(
                         show.description ?? '',
                         overflow: TextOverflow.ellipsis,

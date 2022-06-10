@@ -149,14 +149,6 @@ class LoginPage extends StatelessWidget {
                                   const SizedBox(
                                     height: 16,
                                   ),
-                                  if (loginState is LoginLoading)
-                                    const Center(
-                                        child: CircularProgressIndicator(
-                                      color: Colors.white,
-                                    )),
-                                  const SizedBox(
-                                    height: 4,
-                                  ),
                                   ElevatedButton(
                                       onPressed: state.isEmailValid &&
                                               state.isPasswordValid
@@ -176,6 +168,14 @@ class LoginPage extends StatelessWidget {
                                       child: Text(
                                         context.loc?.login ?? 'Login',
                                       )),
+                                  const SizedBox(
+                                    height: 4,
+                                  ),
+                                  if (loginState is LoginLoading)
+                                    const Center(
+                                        child: CircularProgressIndicator(
+                                      color: Colors.white,
+                                    )),
                                   const SizedBox(
                                     height: 16,
                                   ),

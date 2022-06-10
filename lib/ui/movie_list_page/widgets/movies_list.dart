@@ -120,7 +120,7 @@ class _MoviesListState extends State<MoviesList> {
                   }
                 },
                 separatorBuilder: (_, __) => const SizedBox(
-                      height: 4,
+                      height: 8,
                     ),
                 itemCount: movies.length +
                     (isLoadingMore || hasErrorLoadingMore ? 1 : 0));

@@ -51,10 +51,17 @@ class MovieListPage extends StatelessWidget {
                                 );
                               },
                               icon: CircleAvatar(
-                                backgroundImage: NetworkImage(
-                                  state.user.imageUrl ?? defaultProfileAvatar,
-                                ),
-                              ))
+                                  maxRadius: 20,
+                                  backgroundColor: Colors.black,
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(2.0),
+                                    child: CircleAvatar(
+                                      radius: 30,
+                                      backgroundImage: NetworkImage(
+                                          state.user.imageUrl ??
+                                              defaultProfileAvatar),
+                                    ),
+                                  )))
                       ],
                     ),
                     const SizedBox(
